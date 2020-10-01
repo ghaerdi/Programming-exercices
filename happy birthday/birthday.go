@@ -1,4 +1,4 @@
-// A try of POO style.
+// A try of OOP style.
 package main
 
 import (
@@ -56,5 +56,5 @@ func main() {
   manolo := personInfo{"Manolo", manoloBirth, calculateAge(manoloBirth), checkBirtday(manoloBirth)}
 
   fmt.Println(manolo.congratsBirthday(pepe))
-  // Manolo: Happy birthday for your X years! Pepe!
+  // Manolo: Happy birthday for your X years! Pepe! (or nothing if not Pepe's birthday)
 }

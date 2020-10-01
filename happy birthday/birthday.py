@@ -1,4 +1,4 @@
-# POO birtday congrats
+# OOP birtday congrats
 from datetime import date
 
 # A class that takes name and birth date (optional), calculate age and check birthday.
@@ -21,4 +21,4 @@ pepe = Person("Pepe", date(2001, 9, 29))
 manolo = Person("Manolo")
 
 print(manolo.congrats_birthday(pepe))
-# Manolo: Happy birthday for your X years! Pepe!
+# Manolo: Happy birthday for your X years! Pepe! (or nothing if not Pepe's birthday)

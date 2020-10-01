@@ -13,7 +13,7 @@ func Array(limit int) (numbers []int) {
 	return
 }
 
-// Generate and add dividers of a number
+// Add dividers of a number
 func addDividers(n int) (result int) {
 	for _, num := range Array(n) {
 		if num != 0 && n%num == 0 {

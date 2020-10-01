@@ -1,4 +1,4 @@
-// POO birthday congrats
+// OOP birthday congrats
 
 // A class that takes name and birth date (optional), calculate age and check birthday.
 class Person {
@@ -23,4 +23,4 @@ const pepe = new Person("Pepe", new Date("1999-09-30"));
 const manolo = new Person("Manolo");
 
 console.log(manolo.congratsBirthday(pepe));
-// Manolo: Happy birthday for your X years! Pepe!
+// Manolo: Happy birthday for your X years! Pepe! (or nothing if not Pepe's birthday)

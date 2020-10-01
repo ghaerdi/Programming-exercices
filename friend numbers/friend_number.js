@@ -7,4 +7,4 @@ const genAndAddDivs = num =>
 // Check if a number have a friend number and return a friendly message or return false.
 const friendNumber = num => genAndAddDivs(genAndAddDivs(num)) === num && `${num} and ${genAndAddDivs(num)} are friends!`
 
-console.log(friendNumber(100))
+console.log(friendNumber(220))
