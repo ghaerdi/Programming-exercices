@@ -3,12 +3,12 @@
 // A class that takes name and birth date, calculate age and check birthday.
 class Person {
     public string name;
-    DateTime birth;
     public int age;
-    public bool birthday;
+    private DateTime birth;
+    private bool birthday;
 
-    int compareDate;
-    DateTime today = DateTime.Now;
+    private int compareDate;
+    private DateTime today = DateTime.Now;
 
     public Person(string personName, DateTime personBirth) {
         name = personName;
@@ -33,6 +33,6 @@ class Person {
 }
 
 Person Manolo = new Person("Manolo", new DateTime(2004, 05, 21));
-Person Pepe = new Person("Pepe", new DateTime(2002, 10, 01));
+Person Pepe = new Person("Pepe", new DateTime(2002, 10, 02));
 
 Console.WriteLine(Manolo.congratsBirthday(Pepe));
