@@ -4,6 +4,6 @@
 // range(limit)
 // range(start, limit, step)
 const range = (n1, n2, step) =>
-  [...Array(n2 || n1).keys()].slice(n2 && n1).filter((_, i) => i % (step || 1) === 0)
+  [...Array(n2 || n1).keys()].slice(n2 && n1).filter((_, i) => !(i % (step || 1)))
 
 console.log(range(10, 20, 2))
