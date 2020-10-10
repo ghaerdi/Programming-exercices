@@ -20,7 +20,7 @@ func (this *personInfo) congratsBirthday(person personInfo) string {
   if person.birthday {
     return this.name + ": Happy birthday for your " + strconv.Itoa(person.age) + " years! " + person.name + "!"
   } else {
-    return ""
+    return "Today is not " + person.name + "'s birthday."
   }
 }
 
@@ -29,7 +29,7 @@ func calculateAge(birth time.Time) int {
   today := time.Now()
   var compareDate int
 
-  if today.Day() > birth.Day() && today.Month() > birth.Month() {
+  if today.Month() < birth.Month() || (today.Month() == birth.Month() && today.Day() < birth.Day()) {
     compareDate = 1
   } else {
     compareDate = 0
@@ -49,12 +49,11 @@ func checkBirtday(birth time.Time) bool {
 }
 
 func main() {
-  pepeBirth := time.Date(2001, 9, 29, 0, 0, 0, 0, time.UTC)
+  pepeBirth := time.Date(2001, 11, 9, 0, 0, 0, 0, time.UTC)
   manoloBirth := time.Date(2000, 7, 23, 0, 0, 0, 0, time.UTC)
 
   pepe := personInfo{"Pepe", pepeBirth, calculateAge(pepeBirth), checkBirtday(pepeBirth)}
   manolo := personInfo{"Manolo", manoloBirth, calculateAge(manoloBirth), checkBirtday(manoloBirth)}
 
   fmt.Println(manolo.congratsBirthday(pepe))
-  // Manolo: Happy birthday for your X years! Pepe! (or nothing if not Pepe's birthday)
 }

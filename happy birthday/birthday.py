@@ -8,7 +8,10 @@ class Person:
 
     if birth:
         today = date.today()
-        compare_date = today.month > birth.month or today.day > birth.day
+        if (today.month < birth.month or (today.month == birth.month and today.day < birth.day)):
+          compare_date = 1
+        else: 
+          compare_date = 0
         self.birth = birth
         self.birthday = today.day == birth.day and today.month == birth.month
         self.age = today.year - birth.year - compare_date
@@ -21,6 +24,6 @@ class Person:
       return f"Today is not {person.name}'s birthday."
 
 Manolo = Person("Manolo")
-Pepe = Person("Pepe", date(2001, 10, 1))
+Pepe = Person("Pepe", date(2001, 11, 10))
 
-print(Manolo.congrats_birthday(Pepe))
+print(Manolo.congrats_birthday(Pepe), Pepe.age)

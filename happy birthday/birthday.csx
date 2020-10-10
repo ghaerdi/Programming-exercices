@@ -33,6 +33,6 @@ class Person {
 }
 
 Person Manolo = new Person("Manolo", new DateTime(2004, 05, 21));
-Person Pepe = new Person("Pepe", new DateTime(2002, 10, 02));
+Person Pepe = new Person("Pepe", new DateTime(2000, 10, 10));
 
 Console.WriteLine(Manolo.congratsBirthday(Pepe));

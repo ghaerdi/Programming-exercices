@@ -1,5 +1,7 @@
 // OOP birtday congrats
 
+// Date works strange (I think it's because of the javascript engines), I recommend run this exercise in replit.
+
 // A class that takes name and birth date, calculate age and check birthday.
 class Person {
   name: string;
@@ -9,8 +11,12 @@ class Person {
 
   constructor(name: string, birth: Date ) {
     const today: Date = new Date;
-    const compareDate: number = today.getDate() > birth.getDate() || today.getMonth() > birth.getMonth()! ? 1 : 0;
-
+    let compareDate: number;
+    if (today.getMonth() < birth.getMonth() || (today.getMonth() == birth.getMonth() && today.getDay() < birth.getDay())) {
+        compareDate = 1
+    } else {
+        compareDate = 0
+    }
     this.name = name;
     this.birth = birth;
     this.birthday = birth.getDate() === today.getDate() && birth.getMonth() === today.getMonth();
@@ -18,13 +24,17 @@ class Person {
   }
 
   // Congrats birthday of a other person.
-  congratsBirthday(person: Person): string | boolean {
-    return person.birthday && `${this.name}: Happy birthday for your ${person.age} years! ${person.name}!`
+  congratsBirthday(person: Person): string {
+    if (person.birthday) {
+      return person.birthday && `${this.name}: Happy birthday for your ${person.age} years! ${person.name}!`  
+    } else {
+      return `Today is not ${person.name}'s birtday.`
+    }
+    
   }
 }
 
-const pepe = new Person("Pepe", new Date("2002-09-30"))
-const manolo = new Person("Manolo", new Date("2000-03-07"))
+const Pepe: Person = new Person("Pepe", new Date("2002-09-9"));
+const Manolo: Person = new Person("Manolo", new Date("2000-03-07"));
 
-console.log(manolo.congratsBirthday(pepe))
-// Manolo: Happy birthday for your X years! Pepe! (or nothing if not Pepe's birthday)
+console.log(Manolo.congratsBirthday(Pepe))
